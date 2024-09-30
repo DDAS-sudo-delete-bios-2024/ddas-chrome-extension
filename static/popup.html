@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Download Detector</title>
+    <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+    <div id="message-wrapper" class="hidden">
+        <div id="blocked-download-message" class="message blocked">
+            <img id="blocked-icon" src="assets/blocked.png" alt="Blocked Icon" class="message-icon" width="128" height="128"/>
+            <p id="blocked-text" class="message-text">Download Blocked</p>
+        </div>
+
+        <div id="success-message" class="message success">
+            <img id="success-icon" src="assets/success.png" alt="Success Icon" class="message-icon" width="128" height="128"/>
+            <p id="success-text" class="message-text">Fetch Successful</p>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <!-- Combined tile for checking hash and fetching -->
+    <div id="hash-fetch-container" class="hash-fetch-container">
+        <h2>Check with Backend</h2>
+        <p>Verify if the file already exists in the internal database.</p>
+
+        <!-- FOR SOME REASON ADDING HIDDEN TO FETCH BUTTON DIRECTLY DOESNT WORK => HAVE TO ADD TO ITS CONTAINER -->
+        <div id="check-hash-btn-container">
+            <button id="check-hash-btn">Verify</button>
+        </div>
+
+        <span id="internal-availability-info-container" class="hidden">
+        </span>
+        <br>
+        <br>
+        <br>
+        <div id="fetch-btn-container" class="hidden">
+            <button id="fetch-btn">Fetch</button>
+        </div>
+    </div>
+
+    <div id="file-list"></div>
+
+    <div id="progress-div">
+        <!-- Progress bars for downloads added here -->
+    </div>
+
+    <h1 style="color: white">Recent Downloads</h1>
+    <div id="recent-downloads-container">
+        <div id="download-list">
+            <!-- Download items will be added here dynamically -->
+        </div>
+    </div>
+
+    <script src="popup.bundle.js"></script>
+
+    <footer>
+        <!-- Attribution for icons -->
+        <p class="icon-attribution">
+            <span>UI Icons created by : </span>
+            <a href="https://www.flaticon.com/free-icons/ui" title="ui icons">logisstudio - Flaticon</a>
+            <span style="color:  #f1f1f1">, </span>
+            <a href="https://www.flaticon.com/free-icons/ui" title="ui icons">Deylotus Creative Design - Flaticon</a>
+        </p>
+    </footer>
+</body>
+</html>

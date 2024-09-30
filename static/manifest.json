@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Download Detector",
+  "version": "1.0",
+  "description": "A Chrome extension that detects and logs downloads, cancels downloads as per requirement.",
+  "permissions": [
+    "downloads",
+    "notifications",
+    "scripting",
+    "windows",
+    "tabs"
+  ],
+    "background": {
+      "comment" : "service workers are those that are responsible for listening to events and executing the code in the background",
+      "service_worker": "serviceWorker.bundle.js"
+    },
+  "web_accessible_resources": [
+    {
+      "resources": ["alternate.html"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "icons": {
+    "48": "/assets/icon.png"
+  },
+  "action": {
+    "default_popup": "/popup.html",
+    "default_icon": "/assets/icon.png"
+  }
+}

@@ -1,0 +1,429 @@
+/*
+    ============================================================================================
+    ========================== scrolling, scrollbars and footer ================================
+    ============================================================================================
+    START
+*/
+/* Ensure no horizontal scrolling */
+html, body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* Ensure body allows vertical scrolling */
+body {
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Styling for general content */
+.container {
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+}
+
+/* Specific adjustments for elements */
+.some-element {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Styling for scrollbars */
+body::-webkit-scrollbar {
+    width: 6px;
+}
+
+body::-webkit-scrollbar-track {
+    background: rgba(30, 30, 30, 0.8);
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 6px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Hide scrollbars on mobile */
+@media (max-width: 768px) {
+    body {
+        overflow: auto;
+    }
+}
+
+footer {
+    height: 20px;
+    width: 100%;
+    margin-top: auto;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    font-size: 12px;
+}
+
+.icon-attribution span {
+    color: #aaa;
+}
+
+.icon-attribution a {
+    color: #17D1C6;
+    text-decoration: none;
+}
+
+.icon-attribution a:hover {
+    text-decoration: underline;
+}
+/*
+    ============================================================================================
+    ========================== scrolling, scrollbars and footer ================================
+    END
+*/
+
+/*
+    =============================================================================================
+    ========================== styling for download blocked & success ===========================
+    =============================================================================================
+    START
+*/
+.hidden {
+    display: none;
+}
+
+#message-wrapper {
+    text-align: center;
+}
+
+.message {
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    margin: 10px;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+}
+
+.message-icon {
+    display: block;
+    margin: 0 auto;
+}
+
+.message-text {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.blocked .message-text {
+    color: rgba(255, 0, 0, 1);
+}
+
+.success .message-text {
+    color: rgba(0, 255, 0, 1);
+}
+/*
+    =============================================================================================
+    ============================== styling for download blocked & success =======================
+    END
+*/
+
+/* Styling for the "Recent Downloads" text to look like a button */
+h1 {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgba(30, 30, 30, 0.8); /* Semi-transparent dark background */
+    color: white;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adds a slight shadow for depth */
+    margin-bottom: 20px; /* Add margin below to separate from the table */
+}
+
+/* General body styling with dark mode and background image */
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    background: #121212 url("assets/background.jpg") no-repeat top center;
+    background-size: auto; /* Image only covers as much as possible */
+    background-attachment: scroll;
+}
+
+/*
+    =============================================================================================
+    ======================= styling for hash fetch, fetch button and progres=====================
+    =============================================================================================
+    START
+*/
+.hash-fetch-container {
+    background-color: #2d2d2d;
+    border: 2px dashed #f1f1f1;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    width: 400px;
+}
+
+.hash-fetch-container-success {
+    /* !important to make it take precedence over other style classes borders*/
+    border: 2px dashed green !important;
+}
+
+.hash-fetch-container-error {
+    /* !important to make it take precedence over other style classes borders*/
+    border: 2px dashed red !important;
+}
+
+#check-hash-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#check-hash-btn:hover {
+    background-color: #0056b3;
+}
+
+#fetch-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#fetch-btn:hover {
+    background-color: #0056b3;
+}
+/* Styling for the progress bar and text container */
+.progress-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    padding: 15px;
+    background-color: rgba(30, 30, 30, 0.8);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+/* Styling for the file name label */
+.file-label {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 10px; /* Space between filename and progress bar */
+    text-align: center;
+    word-wrap: break-word; /* Wrap long file names */
+    max-width: 100%; /* Prevent overflow */
+}
+
+/* Styling for the progress bar itself */
+.progress-bar {
+    width: 100%;
+    max-width: 400px;
+    height: 20px;
+    appearance: none;
+    background-color: rgba(50, 50, 50, 0.8);
+    border: 1px solid #007bff;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+}
+
+/* Change color of the progress bar fill */
+.progress-bar::-webkit-progress-value {
+    background-color: #007bff;
+}
+
+.progress-bar::-moz-progress-bar {
+    background-color: #007bff; /* For Firefox */
+}
+
+/* Styling for the progress text */
+.progress-text {
+    margin-top: 10px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-size: 14px;
+}
+/*
+    =============================================================================================
+    ========================== styling for fetch button and progress ============================
+    END
+*/
+
+/*
+    =============================================================================================
+    ========================== styling for download list / table ================================
+    =============================================================================================
+    START
+*/
+/* Recent Downloads Container (tile) styling */
+#recent-downloads-container {
+    width: 100%;
+    max-width: 800px; /* Limits width to avoid overflowing on large screens */
+    background-color: rgba(30, 30, 30, 0.8); /* Semi-transparent dark background */
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Styling for the "Recent Downloads" text inside the container */
+#recent-downloads-container h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0;
+}
+
+/* Container for the download list with custom scroll behavior */
+#download-list {
+    margin: 10px;
+    padding: 10px;
+    max-width: 100%;
+    max-height: 300px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: #1e1e1e;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+/* Custom scrollbar styling */
+#download-list::-webkit-scrollbar {
+    width: 8px;
+    background-color: transparent;
+}
+
+#download-list:hover::-webkit-scrollbar {
+    background-color: #333333;
+}
+
+#download-list::-webkit-scrollbar-thumb {
+    background-color: #555555;
+    border-radius: 4px;
+}
+
+/* Download item styling */
+.download-item {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.download-item:last-child {
+    border-bottom: none;
+}
+
+.download-item span {
+    font-size: 16px;
+}
+
+/* Table styling for dark mode */
+.download-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #1e1e1e;
+    color: #ffffff;
+    table-layout: fixed;
+}
+
+.download-table th, .download-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #444444;
+    word-wrap: break-word;
+}
+
+.download-table th {
+    background-color: #2a2a2a;
+    font-weight: bold;
+}
+
+.download-table tr:nth-child(even) {
+    background-color: #2a2a2a;
+}
+
+.download-table tr:hover {
+    background-color: #333333;
+}
+
+/* Link styling inside the table */
+.download-table a {
+    color: #1e90ff;
+    text-decoration: none;
+}
+
+.download-table a:hover {
+    text-decoration: underline;
+}
+/*
+    =============================================================================================
+    ========================== styling for download list / table ================================
+    END
+*/
+
+/* Responsive design adjustments */
+@media (min-width: 768px) {
+    #file-list, #progress-div, #download-list {
+        max-width: 800px;
+    }
+}
+
+@media (min-width: 1024px) {
+    #download-list {
+        max-width: none;
+    }
+}
+
+.icon-attribution {
+    font-size: 12px;
+    text-align: center;
+    color: #555;
+}
